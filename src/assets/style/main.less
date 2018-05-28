@@ -23,6 +23,13 @@
     height: @height;
   }
   
+  .fixed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 29;
+  }
+  
   .display_box_t {
     display: flex;
     flex-direction: row;
@@ -33,3 +40,19 @@
     display: flex;
     flex-direction: column; 
   }
+  
+  .slider-enter-active, .slider-leave-active {
+    transition: all 1.5s;
+  }
+
+  .slider-enter,.slider-leave-to {
+    opacity: 0;  
+    transform: translateX(-100%); 
+  }
+  .slider-leave, .slider-enter-to {
+    opacity: 1;  
+    transform: translateX(0); 
+  }
+
+  
+
