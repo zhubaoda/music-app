@@ -61,10 +61,17 @@
     	  	if (res && res.msg) {
     	  	  Toast({message: res.msg});
     	  	}
-        if (res.code !== 200) {
-        	  console.log(1233) 
-        }
-        
+    	  	
+        if (res && res.code == 200) { 
+        	  if (res.bindings && res.bindings[1] && res.bindings[1].tokenJsonStr) {
+        	  	let info = JSON.parse(res.bindings[1].tokenJsonStr);
+        	  	info.userId = res.bindings[1].userId;
+        	  	console.log(10, info)
+        	  	localStorage.setItem('info', JSON.stringify(info))
+        	  }
+        	  Toast({message: '登录成功！'});
+          this.$router.push('/index') 
+        }   
     	  }
     }
   }
