@@ -21,5 +21,13 @@ export default {
    // 签到
    async signIn (type) {
    	 return await this.fetch('/api/daily_signin', { params: { type: type } })
+   },
+   // banner
+   async getBanner () {
+   	 return await this.fetch('/api/banner')
+   },
+   // 推荐歌曲
+   async recommendMusic () {
+   	 return await this.fetch('/api/recommend/resource')
    }
 }

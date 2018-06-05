@@ -1,3 +1,39 @@
+<template>
+ <div class="info" :style="{ background: infoBack }">
+    	<img :src="profile.avatarUrl" class="info-img"/>
+    <div class="bottom">
+      <div class="left">
+      	<span class="nick-name">{{ profile.nickname }}</span>
+    	    <span class="level">lv.{{ profile.level }}</span>
+      </div> 
+    	  <div class="sign-in" @click="signIn">
+    	  	<img src="/static/icon/sign-in.svg" />
+    	  	<span>签到</span>
+    	  </div>
+    </div>   	
+ </div>
+</template>
+
+<script>
+  export default {
+    props: {
+    	  infoBack: {
+    	  	type: String,
+    	  	default: ''
+    	  }
+    },
+    computed: {
+      profile () {
+      	return this.$store.state.info.profile;
+      }
+  	},
+  	methods: {
+  	  signIn () {
+  	  	this.$emit('signIn')
+  	  }
+  	}
+  }
+</script>
 <style lang="less" scoped>
   @import url("../../assets/style/main.less");
   .info {
@@ -42,39 +78,3 @@
   }
 </style>
 
-<template>
- <div class="info" :style="{ background: infoBack }">
-    	<img :src="profile.avatarUrl" class="info-img"/>
-    <div class="bottom">
-      <div class="left">
-      	<span class="nick-name">{{ profile.nickname }}</span>
-    	    <span class="level">lv.{{ profile.level }}</span>
-      </div> 
-    	  <div class="sign-in" @click="signIn">
-    	  	<img src="/static/icon/sign-in.svg" />
-    	  	<span>签到</span>
-    	  </div>
-    </div>   	
- </div>
-</template>
-
-<script>
-  export default {
-    props: {
-    	  infoBack: {
-    	  	type: String,
-    	  	default: ''
-    	  }
-    },
-    computed: {
-      profile () {
-      	return this.$store.state.info.profile;
-      }
-  	},
-  	methods: {
-  	  signIn () {
-  	  	this.$emit('signIn')
-  	  }
-  	}
-  }
-</script>

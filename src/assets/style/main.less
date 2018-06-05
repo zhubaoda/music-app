@@ -49,10 +49,38 @@
     opacity: 0;  
     transform: translateX(-100%); 
   }
+  
   .slider-leave, .slider-enter-to {
     opacity: 1;  
     transform: translateX(0); 
   }
-
   
+
+  .swiper-enter-active, .swiper-leave-active {
+    transition: all .5s;
+  }
+
+  .swiper-enter,.swiper-leave-to {
+    opacity: 0;  
+    transform: translateX(-100%); 
+  }
+  
+  .swiper-leave, .swiper-enter-to {
+    opacity: 1;  
+    transform: translateX(0); 
+  }
+  
+  .swipert-enter-active, .swipert-leave-active {
+    transition: all .5s;
+  }
+
+  .swipert-enter,.swipert-leave-to {
+    opacity: 0;  
+    transform: translateX(100%); 
+  }
+  
+  .swipert-leave, .swipert-enter-to {
+    opacity: 1;  
+    transform: translateX(0); 
+  }
 

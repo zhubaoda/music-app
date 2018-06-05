@@ -1,26 +1,3 @@
-<style lang="less" scoped>
-  @import url("../../assets/style/main.less");
-  .index-head {
-    background-color: @basicColor;
-    img {
-  	  .box(30px, 30px);
-    }
-    .img-box {
-  	  padding: 10px 10px 7px 10px;
-    }
-    .center {
-  	  flex: 1;
-  	  justify-content: center;
-  	  img {
-  	    margin-right: 10px;
-  	  }
-  	  .music-img {
-  	    .box(25px, 25px);
-  	  }
-    }
-  }
-</style>
-
 <template>
   <div class="index-head display_box_t">
     <div class="img-box" @click="switchNav(0)">
@@ -45,13 +22,40 @@
 
 <script>
   export default {
+  	data () {
+  	  return {
+  	  	idx: true
+  	  }
+  	},
     props: {
     	
     },
     methods: {
     	  switchNav (idx) {
+    	  	this.idx = idx;
     	  	this.$emit('switchNav', idx);
     	  }
     }
   }
 </script>
+<style lang="less" scoped>
+  @import url("../../assets/style/main.less");
+  .index-head {
+    background-color: @basicColor;
+    img {
+  	  .box(30px, 30px);
+    }
+    .img-box {
+  	  padding: 10px 10px 7px 10px;
+  	  position: relative;
+  	  margin-left: 10px;
+    }
+    .center {
+  	  flex: 1;
+  	  justify-content: center;
+  	  .music-img {
+  	    .box(25px, 25px);
+  	  }
+    }
+  }
+</style>

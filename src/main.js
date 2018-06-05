@@ -8,6 +8,12 @@ import axios from 'axios'
 import store from '@/store'
 import './assets/style/main.less'
 import 'mint-ui/lib/style.css';
+import { Swipe, SwipeItem } from 'mint-ui';
+
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
+
+
 Vue.use(Mint)
 Vue.config.productionTip = false
 

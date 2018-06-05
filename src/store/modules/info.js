@@ -1,8 +1,7 @@
-import axios from 'axios'
 import interfaces from '@/interfaces/index'
 //各个组件共享数据的仓库
 const state = {
-  // 昵称 头像 背景图	
+  // 昵称 头像 背景图	 等级
   profile: {
   	nickname: '',
   	avatarUrl: '',
