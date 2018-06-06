@@ -6,13 +6,7 @@
   	overflow: hidden;
   	.display_box_p;
   	position: relative;
-  	.head-nav {
-  	   /*.fixed;
-  	   width: 100%;
-  	   z-index: 19;
-  	   top: 0;
-  	   left: 0;*/
-  	}
+  	background-color: #f5f5f5;
   	.black {
   	  .fixed;
   	  .box(100vw, 100vh);
@@ -28,7 +22,10 @@
   	}	
   }
   .main {
-  	flex: 1;  		
+  	flex: 1; 
+  	overflow-y: auto; 
+  	overflow-x: hidden;
+  	width: 100vw;	
   }
   .swiper-box {
   	padding: 0 10px;
@@ -128,12 +125,7 @@
       	   	 <span>{{ item.title }}</span>
       	  </div>
       	</div>
-      	<div class="rec-music-list">
-      	  <div class="title">
-      	  	<span>推荐歌单</span>
-      	  	
-      	  </div>
-      	</div>
+      	<recommendMusicList :recommend="recommend" :title="title1"/>
       </div>
     </transition>
     <transition :name="centerAnima">
@@ -153,11 +145,12 @@
   import interfaces from '@/interfaces/index'
   import { Toast } from 'mint-ui';
   import indexHead from '@/components/index/head';
+  import recommendMusicList from '@/components/index/recommendList';
   import sliderTop from '@/components/index/sliderTop';
   import tab from '@/components/common/tab';
   import dataConfig from './data.js';
   export default {
-  	components: { indexHead, sliderTop, Toast, tab },
+  	components: { indexHead, sliderTop, recommendMusicList, Toast, tab },
   	data () {
   	  return {
   	  	sliderShow: false,
@@ -165,6 +158,7 @@
   	  	tablist: ['推荐', '朋友', '电台'],
   	  	toIdx: 0,
   	  	idx: 0,
+  	  	title1: '推荐歌单',
   	  	recommendImg: dataConfig.recommendImg
   	  }
   	},
@@ -231,7 +225,13 @@
   	  }
   	},
   	async created () {
-  	  Promise.all([this.$store.dispatch('recommendMusic'), this.$store.dispatch('getBanner')])
+  	  Promise.all(
+  	  	[
+  	  	  this.$store.dispatch('recommendMusic'),
+  	  	  this.$store.dispatch('getBanner'), 
+  	  	  this.$store.dispatch('getNewMusic')
+  	  	]
+  	  )
   	  await this.getInfo();
   	}
   }

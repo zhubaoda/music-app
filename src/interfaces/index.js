@@ -29,5 +29,9 @@ export default {
    // 推荐歌曲
    async recommendMusic () {
    	 return await this.fetch('/api/recommend/resource')
+   },
+   // 获取最新音乐
+   async getNewMusic () {
+   	 return await this.fetch('/api/personalized/newsong')
    }
 }

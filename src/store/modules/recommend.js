@@ -4,7 +4,9 @@ const state = {
   // banner
   banner: [],
   // 推荐歌曲
-  recommend: []
+  recommend: [],
+  // 最新音乐
+  newmusic: []
   
 }
 //对state的值进行过滤
@@ -24,6 +26,12 @@ const actions = {
   	if (res) {
   	  commit('getBanner', res);
   	}
+  },
+  async getNewMusic({commit,state}) {
+  	let res = await interfaces.getNewMusic();
+  	if (res) {
+  	  commit('getNewMusic', res);
+  	}
   }
 }
 //在mutation中去改变state的值
@@ -33,6 +41,9 @@ const mutations = {
   },
   getBanner(state,res) {
   	state.banner = res.banners
+  },
+  getNewMusic(state, res) {
+//	state.newmusic = 
   }
 }
 
