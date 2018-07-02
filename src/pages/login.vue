@@ -16,6 +16,8 @@
   	    <div class="submit" @click="login">
   	    	   <span>登录</span>
   	    </div>
+  	    <div @click="downLoadImg">展示二位码下载链接</div>
+  	    <a :href="base64" v-show="show" ref="mybase" id="mybase" download="hahha">保存二维码</a>
   	  </div>
   	</div>
   </div>
@@ -34,10 +36,33 @@
         formData: {
         	  phone: '',
         	  password: ''
-        }
+        },
+        show: false,
+        base64: ''
       }
     },
     methods: {
+    	  async downLoadImg () {
+    	  	 this.show = true
+	     let url = "../../static/icon/calendar.svg"
+	     let myurl = '/weapp/shop/fenxiao/member/22.jpg'
+	     let image = new Image()
+	     image.crossOrigin = 'Anonymous'
+	     image.src = myurl
+	     image.onload = async () => {
+	     	this.base64 = await this.getBaseImg(image)
+	     }
+      },
+    	  async getBaseImg (img) {
+		let cvs = document.createElement('canvas')
+	  	cvs.width = img.width
+	  	cvs.height = img.height
+	  	let ctx = cvs.getContext('2d')
+	  	ctx.drawImage(img, 0, 0, img.width, img.height)
+        let ext = img.src.substring(img.src.lastIndexOf(".")+1).toLowerCase()
+	  	let dataURL = cvs.toDataURL("image/"+ext)
+        return dataURL
+	  },
     	  async login () {
     	  	if (!this.formData.phone) {
     	  	  Toast({message: '请输入手机号'});

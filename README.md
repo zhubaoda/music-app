@@ -1,6 +1,6 @@
 # music-app
 
-> A Vue.js project
+> 网易云h5
 
 ## Build Setup
 

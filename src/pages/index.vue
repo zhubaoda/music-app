@@ -1,99 +1,3 @@
-<style lang="less" scoped>
-  @import url("../assets/style/main.less");
-  .index {
-  	width: 100%;
-  	height: 100vh;
-  	overflow: hidden;
-  	.display_box_p;
-  	position: relative;
-  	background-color: #f5f5f5;
-  	.black {
-  	  .fixed;
-  	  .box(100vw, 100vh);
-  	  background-color: rgba(0, 0, 0, .6);
-  	}
-  	.left-slider {
-  	  .box(80%, 100%);
-  	  background-color: #fff;
-  	  position: fixed;
-  	  top: 0;
-  	  left: 0; 
-  	  z-index: 30;
-  	}	
-  }
-  .main {
-  	flex: 1; 
-  	overflow-y: auto; 
-  	overflow-x: hidden;
-  	width: 100vw;	
-  }
-  .swiper-box {
-  	padding: 0 10px;
-  	background-color: @basicColor;
-    height: 140px; 	
-  }
-  .swiper {
-  	width: 100%;
-  	height: 170px;
-  	border-radius:8px;
-  	overflow: hidden;
-  	.img-box {
-  	  width: 100%;
-  	  height: 170px;
-  	  .display_box_t;
-  	  justify-content: center;
-  	}
-  	img {
-  	  width: 100%;
-  	}
-  }
-  .recommd {
-  	background-color: #fff;
-  	color: #fff;
-  	.image {
-  		width: 100%;
-  		height: 400px;
-  	}
-  	.entrance {
-  	  .display_box_t;
-  	  margin-top: 28px;
-  	  padding: 20px 0 10px 0; 
-  	  border-bottom: 1px solid rgba(204,204,204,.3);
-  	  .entrance-item {
-  	  	flex: 1;
-  	  	.display_box_p;
-  	    justify-content: center;
-  	    align-items: center; 
-  	  	.top {
-  	  		.display_box_t;
-  	        justify-content: center;
-  	        width: 45px;
-  	        height: 45px;
-  	        border: 1px solid @basicColor;
-  	        border-radius:50%;
-  	        img {
-  	        	  width: 25px;
-  	        	  height: 25px;
-  	        }
-  	  	}
-  	  	span {
-  	  		color: #000;
-  	  		font-size: 12px;
-  	  		margin-top: 10px;
-  	  	}
-  	  }
-  	}
-  }
-  .friend {
-  	background-color: orange;
-  	color: #000;
-  }
-  .station {
-  	background-color: blue;
-  	color: red;
-  }
-</style>
-
 <template>
   <div class="index">
   	<div class="head-nav">
@@ -236,3 +140,98 @@
   	}
   }
 </script>
+<style lang="less" scoped>
+  @import url("../assets/style/main.less");
+  .index {
+  	width: 100%;
+  	height: 100vh;
+  	overflow: hidden;
+  	.display_box_p;
+  	position: relative;
+  	background-color: #f5f5f5;
+  	.black {
+  	  .fixed;
+  	  .box(100vw, 100vh);
+  	  background-color: rgba(0, 0, 0, .6);
+  	}
+  	.left-slider {
+  	  .box(80%, 100%);
+  	  background-color: #fff;
+  	  position: fixed;
+  	  top: 0;
+  	  left: 0; 
+  	  z-index: 30;
+  	}	
+  }
+  .main {
+  	flex: 1; 
+  	overflow-y: auto; 
+  	overflow-x: hidden;
+  	width: 100vw;	
+  }
+  .swiper-box {
+  	padding: 0 10px;
+  	background-color: @basicColor;
+    height: 140px; 	
+  }
+  .swiper {
+  	width: 100%;
+  	height: 170px;
+  	border-radius:8px;
+  	overflow: hidden;
+  	.img-box {
+  	  width: 100%;
+  	  height: 170px;
+  	  .display_box_t;
+  	  justify-content: center;
+  	}
+  	img {
+  	  width: 100%;
+  	}
+  }
+  .recommd {
+  	background-color: #fff;
+  	color: #fff;
+  	.image {
+  		width: 100%;
+  		height: 400px;
+  	}
+  	.entrance {
+  	  .display_box_t;
+  	  margin-top: 28px;
+  	  padding: 20px 0 10px 0; 
+  	  border-bottom: 1px solid rgba(204,204,204,.3);
+  	  .entrance-item {
+  	  	flex: 1;
+  	  	.display_box_p;
+  	    justify-content: center;
+  	    align-items: center; 
+  	  	.top {
+  	  		.display_box_t;
+  	        justify-content: center;
+  	        width: 45px;
+  	        height: 45px;
+  	        border: 1px solid @basicColor;
+  	        border-radius:50%;
+  	        img {
+  	        	  width: 25px;
+  	        	  height: 25px;
+  	        }
+  	  	}
+  	  	span {
+  	  		color: #000;
+  	  		font-size: 12px;
+  	  		margin-top: 10px;
+  	  	}
+  	  }
+  	}
+  }
+  .friend {
+  	background-color: orange;
+  	color: #000;
+  }
+  .station {
+  	background-color: blue;
+  	color: red;
+  }
+</style>

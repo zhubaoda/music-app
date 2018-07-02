@@ -1,49 +1,3 @@
-<style lang="less" scoped>
-  @import url("../../assets/style/main.less");
-  .tabbar {
-  	width:100%;
-  	background-color: @basicColor;
-  	padding-bottom: 8px;
-  	.display_box {
-  	  display: flex;
-  	  flex-direction: row;
-  	  justify-content: center;
-  	  align-items: center;
-  	}
-  	.outbox {
-  	  width:100%; 
-  	  height: 42px;
-  	  overflow: hidden;
-  	}
-  	.tab {
-  	   width: 100%;
-  	   .item {
-  	     flex:1;
-  	   }
-  	}
-  	.scroll_tab {
-  	   overflow-x: scroll;
-  	   overflow-y: hidden;
-  	   width: 100%;
-  	   display: flex;
-  	   position: absolute;
-  	   left: 0;
-  	}
-  	.scroll_tab::-webkit-scrollbar {
-       display: none;
-    }
-  	.item_box {
-     	padding: 15px 0 8px 0;
-     	font-size: 14px;
-     	color: rgba(255,255,255,.6);
-     	border-bottom: 2px solid transparent;
-     }
-     .item_active {
-     	color: #fff;
-     	border-bottom: 2px solid #fff;
-     }
-  }
-</style>
 <template>
    <div class="tabbar">
    	 <div class="display_box tab" v-if="canScroll === 0">
@@ -107,4 +61,50 @@
     }
   }
 </script>
+<style lang="less" scoped>
+  @import url("../../assets/style/main.less");
+  .tabbar {
+  	width:100%;
+  	background-color: @basicColor;
+  	padding-bottom: 8px;
+  	.display_box {
+  	  display: flex;
+  	  flex-direction: row;
+  	  justify-content: center;
+  	  align-items: center;
+  	}
+  	.outbox {
+  	  width:100%; 
+  	  height: 42px;
+  	  overflow: hidden;
+  	}
+  	.tab {
+  	   width: 100%;
+  	   .item {
+  	     flex:1;
+  	   }
+  	}
+  	.scroll_tab {
+  	   overflow-x: scroll;
+  	   overflow-y: hidden;
+  	   width: 100%;
+  	   display: flex;
+  	   position: absolute;
+  	   left: 0;
+  	}
+  	.scroll_tab::-webkit-scrollbar {
+       display: none;
+    }
+  	.item_box {
+     	padding: 15px 0 8px 0;
+     	font-size: 14px;
+     	color: rgba(255,255,255,.6);
+     	border-bottom: 2px solid transparent;
+     }
+     .item_active {
+     	color: #fff;
+     	border-bottom: 2px solid #fff;
+     }
+  }
+</style>
 

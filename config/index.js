@@ -17,6 +17,10 @@ module.exports = {
         pathRewrite: {
           '^/api': '/'
         }
+      },
+      '/weapp': {
+      	target: 'https://zuizan.oss-cn-hangzhou.aliyuncs.com',
+        changeOrigin: true
       }
     },
 
